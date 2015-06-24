@@ -645,6 +645,9 @@ int ftplib::FtpAccess(const char *path, accesstype type, transfermode mode, ftph
 		dir = FTPLIB_READ;
 		break;
 	case ftplib::filewriteappend:
+		strcpy(buf, "APPE");
+		dir = FTPLIB_WRITE;
+		break;
 	case ftplib::filewrite:
 		strcpy(buf,"STOR");
 		dir = FTPLIB_WRITE;
