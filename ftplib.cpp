@@ -49,6 +49,7 @@ typedef int socklen_t;
 #define strdup _strdup
 #endif
 
+#define NOSSL
 using namespace std;
 
 /* socket values */
@@ -616,7 +617,7 @@ int ftplib::FtpAcceptConnection(ftphandle *nData, ftphandle *nControl)
 int ftplib::FtpAccess(const char *path, accesstype type, transfermode mode, ftphandle *nControl, ftphandle **nData)
 {
 	char buf[256];
-	int dir, ret;
+	int dir;
 
 	if ((path == NULL) && ((type == ftplib::filewrite)
 		|| (type == ftplib::fileread)
@@ -645,7 +646,7 @@ int ftplib::FtpAccess(const char *path, accesstype type, transfermode mode, ftph
 		dir = FTPLIB_READ;
 		break;
 	case ftplib::filewriteappend:
-		strcpy(buf, "APPE");
+		strcpy(buf,"APPE");
 		dir = FTPLIB_WRITE;
 		break;
 	case ftplib::filewrite:
