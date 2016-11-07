@@ -1,7 +1,7 @@
 /*
   This code snippet illustrates how to write data stream to ftp server files directly.
   author: wangfeng
-  email: great888cd@163.com
+  email: 985004673@qq.com
 */
 
 int main(int argc,char **argv){
